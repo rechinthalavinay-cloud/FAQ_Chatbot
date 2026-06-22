@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Chatbot</title>
+
+    <style>
+        body {
+            background: #1e1e2f;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .chat-container {
+            width: 600px;
+            background: #2b2b40;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #bdbdbd;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chat-box {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .user-message,
+        .bot-message {
+            padding: 12px 15px;
+            border-radius: 15px;
+            margin: 10px 0;
+            animation: fadeIn 0.4s ease-in;
+        }
+
+        .user-message {
+            background: #4caf50;
+            color: white;
+            text-align: right;
+        }
+
+        .bot-message {
+            background: #3b3b55;
+            color: white;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #4caf50;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #43a047;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <h1>🤖 FAQ Chatbot</h1>
+
+    <p class="subtitle">
+        Ask your questions anytime!
+    </p>
+
+    <div class="chat-box">
+
+        {% for chat in chat_history %}
+
+            <div class="user-message">
+                👤 {{ chat.question }}
+            </div>
+
+            <div class="bot-message">
+                🤖 {{ chat.response }}
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <form method="POST">
+
+        <input type="text"
+               name="question"
+               placeholder="Type your question..."
+               required>
+
+        <button type="submit">
+            Send
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
