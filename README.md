@@ -35,13 +35,13 @@ faq-chatbot/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/rechinthalavinay-cloud/CodeAlpha_FAQ_Chatbot.git
+git clone https://github.com/rechinthalavinay-cloud/FAQ_Chatbot.git
 ```
 
 ### 2. Navigate to the project folder
 
 ```bash
-cd CodeAlpha_FAQ_Chatbot
+cd FAQ_Chatbot
 ```
 
 ### 3. Install dependencies
@@ -72,14 +72,6 @@ http://127.0.0.1:5000
 - Do you offer refunds?
 - How can I reset my password?
 - What is CodeAlpha?
-
-## 📷 Project Screenshot
-
-Add a screenshot of your chatbot interface here.
-
-## 🎯 Internship Task
-
-This project was developed as part of the **CodeAlpha Python Programming Internship**.
 
 ## 👨‍💻 Author
 
